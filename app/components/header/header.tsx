@@ -80,7 +80,11 @@ const MobileMenuButton = styled.button`
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 2px var(--color-emerald-60);
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.12);
   }
 `
 
@@ -177,7 +181,7 @@ export default function Header() {
 
       {/* Navegação Desktop */}
       <NavDesktop role="navigation" aria-label="Menu Principal (Desktop)">
-        <NavLink href="/sobre">Sobre Nós</NavLink>
+        <NavLink href="/sobre">Quem somos</NavLink>
         <NavLink href="/contato">Contato</NavLink>
         <ThemeToggle />
       </NavDesktop>
@@ -190,9 +194,9 @@ export default function Header() {
         $isOpen={isMenuOpen}
       >
         <MobileNavContent>
-          <MobileNavLink href="/sobre">Sobre Nós</MobileNavLink>
+          <MobileNavLink href="/sobre" onClick={() => setIsMenuOpen(false)}>Quem somos</MobileNavLink>
           <Divider />
-          <MobileNavLink href="/contato">Contato</MobileNavLink>
+          <MobileNavLink href="/contato" onClick={() => setIsMenuOpen(false)}>Contato</MobileNavLink>
         </MobileNavContent>
       </MobileNav>
     </HeaderContainer>
