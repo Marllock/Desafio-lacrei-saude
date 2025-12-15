@@ -55,7 +55,7 @@ const ImageContainer = styled.div`
   position: relative;
   width: 100%;
   height: 16rem; /* h-64 */
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   overflow: hidden;
 
   @media (min-width: 768px) {
@@ -65,15 +65,33 @@ const ImageContainer = styled.div`
 `
 
 const StyledImage = styled(Image)`
-  object-fit: cover;
+  display: block;
+  border-radius: 0.75rem;
+  overflow: hidden;
+
+  & span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    overflow: hidden;
+  }
+
+  & img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: inherit;
+  }
 `
 
 const CardsSection = styled.section`
   max-width: 80rem; /* max-w-7xl */
   margin: 5rem auto 4rem; /* mt-20 mb-16 */
   padding: 0 2rem;
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
   gap: 1.5rem;
 
   @media (min-width: 768px) {
@@ -100,7 +118,7 @@ const Card = styled.div`
   transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
   position: relative;
 
-  /* subtle emerald accent at the top */
+  
   &::before {
     content: "";
     position: absolute;
@@ -113,7 +131,6 @@ const Card = styled.div`
     border-top-right-radius: 0.75rem;
   }
 
-  /* Hover animation (motion-safe) */
   @media (prefers-reduced-motion: no-preference) {
     &:hover {
       transform: translateY(-2px) scale(1.01);
@@ -133,7 +150,42 @@ const Card = styled.div`
   }
 
   @media (min-width: 768px) {
-    flex: 1;
+    flex: none;
+  }
+`
+
+const CardsInner = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 2rem;
+  }
+`
+
+const CardsColumn = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`
+
+const AsideImageContainer = styled.div`
+  position: relative;
+  width: 100%;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  align-self: stretch;
+  background: var(--color-gray-10);
+  min-height: 18rem;
+
+  @media (min-width: 768px) {
+    width: 44%;
+    flex: none;
+    /* allow the container to stretch to match the cards' height */
   }
 `
 
@@ -199,25 +251,39 @@ export default function SobreHero() {
   
       {/* Seção Missão, Visão e Valores */}
       <CardsSection aria-label="">
-      <CardsSectionTitle>Nosso Compromisso</CardsSectionTitle>
-      <Card role="article" aria-label="Card Inclusão">
-        <CardTitle>Inclusão</CardTitle>
-        <CardText>
-          Nossa plataforma digital é acessível e atendemos toda comunidade LGBTQIAPN+.
-        </CardText>
-      </Card>
-      <Card role="article" aria-label="Card Acolhimento">
-        <CardTitle>Acolhimento</CardTitle>
-        <CardText>
-          As pessoas profissionais da saúde entendem as necessidades da comunidade LGBTQIAPN+.
-        </CardText>
-      </Card>
-        <Card role="article" aria-label="Card Segurança">
-          <CardTitle>Segurança</CardTitle>
-          <CardText>
-            Protegemos seus dados e validamos pacientes e profissionais da saúde.
-          </CardText>
-        </Card>
+        <CardsSectionTitle>Nosso Compromisso</CardsSectionTitle>
+        <CardsInner>
+          <CardsColumn>
+            <Card role="article" aria-label="Card Inclusão">
+              <CardTitle>Inclusão</CardTitle>
+              <CardText>
+                Nossa plataforma digital é acessível e atendemos toda comunidade LGBTQIAPN+.
+              </CardText>
+            </Card>
+            <Card role="article" aria-label="Card Acolhimento">
+              <CardTitle>Acolhimento</CardTitle>
+              <CardText>
+                As pessoas profissionais da saúde entendem as necessidades da comunidade LGBTQIAPN+.
+              </CardText>
+            </Card>
+            <Card role="article" aria-label="Card Segurança">
+              <CardTitle>Segurança</CardTitle>
+              <CardText>
+                Protegemos seus dados e validamos pacientes e profissionais da saúde.
+              </CardText>
+            </Card>
+          </CardsColumn>
+
+          <AsideImageContainer aria-hidden="true">
+              <StyledImage
+                src="/sobre-right-1.jpg"
+                alt="Imagem Nosso Compromisso"
+                fill
+                sizes="(max-width: 768px) 100vw, 48vw"
+                priority
+              />
+          </AsideImageContainer>
+        </CardsInner>
       </CardsSection>
 
       <MidSpacer aria-hidden="true" />
