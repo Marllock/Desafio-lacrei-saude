@@ -9,7 +9,6 @@ describe('ContactSection', () => {
 
     expect(screen.getByRole('heading', { name: /Entre em contato/i })).toBeInTheDocument();
 
-    // inputs por label
     const name = screen.getByLabelText(/Nome Completo/i);
     const email = screen.getByLabelText(/E-mail/i);
     const message = screen.getByLabelText(/Mensagem/i);

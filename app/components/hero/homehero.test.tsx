@@ -30,7 +30,6 @@ describe('HomeHero (carousel)', () => {
     const nextBtn = screen.getByRole('button', { name: /Próximo/i });
     const prevBtn = screen.getByRole('button', { name: /Anterior/i });
 
-    // inicialmente a imagem 1 está ativa
     expect(getActiveImageAlt()).toBe('Imagem 1');
 
     await userEvent.click(nextBtn);
@@ -58,11 +57,9 @@ describe('HomeHero (carousel)', () => {
   test('setas do teclado navegam o carousel', () => {
     render(<HomeHero />);
 
-    // ArrowRight -> Imagem 2
     fireEvent.keyDown(window, { key: 'ArrowRight' });
     expect(getActiveImageAlt()).toBe('Imagem 2');
 
-    // ArrowLeft -> volta para Imagem 1
     fireEvent.keyDown(window, { key: 'ArrowLeft' });
     expect(getActiveImageAlt()).toBe('Imagem 1');
   });

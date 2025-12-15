@@ -14,7 +14,6 @@ describe('Header (keyboard accessibility)', () => {
     await userEvent.keyboard('{Enter}');
     expect(menuButton).toHaveAttribute('aria-expanded', 'true');
 
-    // Pressionar Enter novamente fecha
     await userEvent.keyboard('{Enter}');
     expect(menuButton).toHaveAttribute('aria-expanded', 'false');
   });

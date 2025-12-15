@@ -37,7 +37,6 @@ describe('ThemeToggle (keyboard)', () => {
     await waitFor(() => expect(document.documentElement.getAttribute('data-theme')).toBe('dark'));
     expect(localStorage.getItem('theme')).toBe('dark');
 
-    // volta para claro com Enter
     await userEvent.keyboard('{Enter}');
     await waitFor(() => expect(document.documentElement.getAttribute('data-theme')).toBeNull());
     expect(localStorage.getItem('theme')).toBe('light');
