@@ -105,7 +105,7 @@ npm run build && npm start
 
 ## Deploy
 
-https://desafio-lacrei-saude-fawn.vercel.app/
+https://desafio-lacrei-saude-uwsd.vercel.app/
 
 
 ## Resultado Lighthouse
