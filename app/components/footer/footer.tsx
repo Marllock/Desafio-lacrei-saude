@@ -6,18 +6,18 @@ import styled from "styled-components"
 
 const FooterContainer = styled.footer`
   background: linear-gradient(to bottom, var(--footer-gradient-start), var(--footer-gradient-end));
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.5rem;
   border-top: 1px solid var(--color-gray-20);
   margin-top: auto;
   width: 100%;
   transition: background 0.3s ease;
 
   @media (min-width: 768px) {
-    padding: 2rem 2.5rem;
+    padding: 1rem 1.5rem;
   }
 
   @media (min-width: 1024px) {
-    padding: 0rem 7.5rem;
+    padding: 0rem 5rem;
   }
 `
 
@@ -26,11 +26,11 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 2rem 0;
+  gap: 1rem;
+  padding: 1rem 0;
 
   @media (min-width: 768px) {
-    gap: 3rem;
+    gap: 1.5rem;
   }
 `
 
@@ -44,7 +44,7 @@ const TopSection = styled.div`
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 1.5rem;
   }
 `
 
@@ -56,7 +56,7 @@ const LogoWithSocials = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
-    gap: 1rem;
+    gap: 0.5rem;
     align-items: center;
   }
 `
@@ -74,8 +74,8 @@ const Logo = styled(Link)`
 const SocialLinks = styled.div`
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  margin-left: 1rem;
+  gap: 1rem;
+  margin-left: 0.5rem;
 `
 
 const SocialLink = styled(Link)`
@@ -113,28 +113,7 @@ const FooterNav = styled.nav`
   }
 `
 
-const FooterNavLink = styled(Link)`
-  border-radius: 0.375rem;
-  padding: 0.5rem 1rem;
-  color: var(--color-gray-80);
-  font-size: var(--text-text-xl);
-  transition: background-color 100ms;
-  white-space: nowrap;
 
-  &:hover {
-    background-color: var(--color-green-20);
-  }
-
-  &:focus {
-    outline: none;
-    box-shadow: none;
-  }
-
-  &:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--color-emerald-30);
-  }
-`
 
 const BottomSection = styled.div`
   display: flex;
@@ -154,7 +133,7 @@ const BottomSection = styled.div`
 const Copyright = styled.div`
   text-align: center;
   color: var(--color-gray-80);
-  font-size: var(--text-text-base);
+  font-size: 0.875rem;
   line-height: 1.5;
 
   @media (min-width: 768px) {
@@ -203,10 +182,7 @@ export default function Footer() {
             </SocialLinks>
           </LogoWithSocials>
 
-          <FooterNav aria-label="Links principais do rodapé">
-            <FooterNavLink href="/sobre">Sobre Nós</FooterNavLink>
-            <FooterNavLink href="/contato">Contato</FooterNavLink>
-          </FooterNav>
+         
         </TopSection>
 
         {/* Copyright */}

@@ -11,9 +11,17 @@ const HeroSection = styled.section`
   gap: 2rem;
   padding: 0 2rem;
 
+  /* allow certain instances to reverse order on mobile (image below text) */
+  &.reverseOnMobile {
+    flex-direction: column-reverse;
+  }
+
   @media (min-width: 768px) {
     flex-direction: row;
     align-items: center;
+    &.reverseOnMobile {
+      flex-direction: row;
+    }
   }
 `
 
@@ -142,6 +150,22 @@ const CardText = styled.p`
   line-height: 1.7;
 `
 
+const BottomSpacer = styled.div`
+  height: 3rem;
+
+  @media (min-width: 768px) {
+    height: 8rem;
+  }
+`
+
+const MidSpacer = styled.div`
+  height: 2rem;
+
+  @media (min-width: 768px) {
+    height: 4rem;
+  }
+`
+
 export default function SobreHero() {
   return (
     <>
@@ -162,7 +186,7 @@ export default function SobreHero() {
 
         <ImageContainer>
           <StyledImage
-            src="/sobre-right-2.jpg"
+            src="/sobre-main.jpg"
             alt="Coração Pride"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
@@ -170,6 +194,8 @@ export default function SobreHero() {
           />
         </ImageContainer>
       </HeroSection>
+
+      
   
       {/* Seção Missão, Visão e Valores */}
       <CardsSection aria-label="">
@@ -193,6 +219,36 @@ export default function SobreHero() {
           </CardText>
         </Card>
       </CardsSection>
+
+      <MidSpacer aria-hidden="true" />
+
+      {/* Nosso propósito */}
+      <HeroSection className="reverseOnMobile" aria-label="Propósito Lacrei Saúde">
+        <ImageContainer>
+          <StyledImage
+            src="/sobre-right-2.jpg"
+            alt="Coração Pride"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority
+          />
+        </ImageContainer>
+
+        <HeroContent>
+          <HeroTitle>
+            Propósito da Lacrei Saúde
+          </HeroTitle>
+            <HeroText>
+            A Lacrei Saúde facilita a conexão entre pessoas da comunidade LGBTQIAPN+ mais que precisam de atendimento clínico a profissionais da saúde.
+            Buscamos proporcionar um atendimento de qualidade, sustentado pelos pilares da inclusão, representatividade e segurança.
+            </HeroText>
+        </HeroContent>
+      </HeroSection>
+
+      <BottomSpacer aria-hidden="true" />
+
     </>
+
+    
   )
 }
