@@ -199,7 +199,7 @@ const CardTitle = styled.h3`
 const CardText = styled.p`
   font-size: var(--text-text-base);
   color: var(--color-gray-60);
-  line-height: 1.7;
+  line-height: var(--lh-text);
 `
 
 const BottomSpacer = styled.div`

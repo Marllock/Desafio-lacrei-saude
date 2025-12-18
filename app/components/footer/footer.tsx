@@ -134,7 +134,7 @@ const Copyright = styled.div`
   text-align: center;
   color: var(--color-gray-80);
   font-size: 0.875rem;
-  line-height: 1.5;
+  line-height: var(--lh-text);
 
   @media (min-width: 768px) {
     text-align: center;

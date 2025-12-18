@@ -45,7 +45,7 @@ const Description = styled.p`
   font-size: var(--text-text-base);
   color: var(--color-gray-60);
   max-width: 28rem; /* max-w-md */
-  line-height: 1.625;
+  line-height: var(--lh-text);
 `
 
 const SocialsContainer = styled.div`

@@ -47,6 +47,10 @@ const GlobalStyles = createGlobalStyle`
     --text-text-base: 1rem;
     --text-text-xl: 1.125rem;
 
+    /* Line heights */
+    --lh-headline: 1.2;
+    --lh-text: 1.5;
+
     /* Gradients Light Mode */
     --header-gradient-start: var(--color-green-10);
     --header-gradient-end: var(--color-gray-10);
@@ -126,6 +130,12 @@ const GlobalStyles = createGlobalStyle`
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+    line-height: var(--lh-headline);
+  }
+
+  /* Base line-height for body copy and form controls */
+  p, label, input, textarea, button {
+    line-height: var(--lh-text);
   }
 
   button {
