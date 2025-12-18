@@ -15,19 +15,21 @@ const HeaderContainer = styled.header`
   padding: 2rem 1.5rem;
   transition: background 0.3s ease;
 
+  padding: var(--space-4) var(--space-3);
+
   @media (min-width: 768px) {
-    padding: 2rem 2.5rem;
+    padding: var(--space-4) calc(5 * var(--space-unit));
   }
 
   @media (min-width: 1024px) {
-    padding: 2rem 7.5rem;
+    padding: var(--space-4) calc(15 * var(--space-unit));
   }
 `
 
 const MobileActions = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-1);
 
   @media (min-width: 768px) {
     display: none;
@@ -40,13 +42,13 @@ const NavDesktop = styled.nav`
   @media (min-width: 768px) {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: var(--space-3);
   }
 `
 
 const NavLink = styled(Link)`
   border-radius: 0.375rem;
-  padding: 0.75rem 1rem;
+  padding: calc(1.5 * var(--space-unit)) calc(2 * var(--space-unit));
   color: var(--color-gray-80);
   font-size: var(--text-text-xl);
   transition: background-color 100ms;
@@ -63,7 +65,7 @@ const NavLink = styled(Link)`
 
 const MobileMenuButton = styled.button`
   display: block;
-  padding: 0.5rem;
+  padding: var(--space-1);
   border-radius: 0.375rem;
   background: transparent;
   border: none;
@@ -100,7 +102,7 @@ const MobileNav = styled.nav<{ $isOpen: boolean }>`
   transition: all 300ms ease-out;
   
   opacity: ${({ $isOpen }) => ($isOpen ? 1 : 0)};
-  transform: ${({ $isOpen }) => ($isOpen ? "translateY(0)" : "translateY(-0.5rem)")};
+  transform: ${({ $isOpen }) => ($isOpen ? "translateY(0)" : "translateY(calc(-1 * var(--space-1)))")};
   max-height: ${({ $isOpen }) => ($isOpen ? "24rem" : "0")};
   pointer-events: ${({ $isOpen }) => ($isOpen ? "auto" : "none")};
 
@@ -112,14 +114,14 @@ const MobileNav = styled.nav<{ $isOpen: boolean }>`
 const MobileNavContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem 1.5rem;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
 `
 
 const MobileNavLink = styled(Link)`
   display: inline-flex;
   border-radius: 0.375rem;
-  padding: 0.75rem 1rem;
+  padding: calc(1.5 * var(--space-unit)) calc(2 * var(--space-unit));
   font-weight: 600;
   color: var(--color-emerald-70);
 
@@ -146,7 +148,7 @@ export default function Header() {
   return (
     <HeaderContainer aria-label="Cabeçalho principal" role="banner">
       {/* Logo */}
-      <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+      <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 'calc(1.5 * var(--space-unit))' }}>
         <Image
           src="/logo-header.svg"
           alt="Logo da Lacrei Saúde"

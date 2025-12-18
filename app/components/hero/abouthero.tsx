@@ -8,8 +8,8 @@ const HeroSection = styled.section`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 0 2rem;
+  gap: var(--space-4);
+  padding: 0 var(--space-4);
 
   /* allow certain instances to reverse order on mobile (image below text) */
   &.reverseOnMobile {
@@ -43,11 +43,11 @@ const HeroTitle = styled.h1`
 
 const HeroText = styled.p`
   font-size: var(--text-text-base);
-  margin-top: 1rem;
+  margin-top: var(--space-2);
   color: var(--color-gray-60);
 
   & + & {
-    margin-top: 0.75rem;
+    margin-top: calc(1.5 * var(--space-unit));
   }
 `
 
@@ -89,13 +89,13 @@ const StyledImage = styled(Image)`
 
 const CardsSection = styled.section`
   max-width: 80rem; /* max-w-7xl */
-  margin: 5rem auto 4rem; /* mt-20 mb-16 */
-  padding: 0 2rem;
+  margin: calc(10 * var(--space-unit)) auto var(--space-8); /* mt-20 mb-16 */
+  padding: 0 var(--space-4);
   display: block;
-  gap: 1.5rem;
+  gap: var(--space-3);
 
   @media (min-width: 768px) {
-    margin-top: 7.5rem; /* mt-30 */
+    margin-top: calc(15 * var(--space-unit)); /* mt-30 */
   }
 `
 
@@ -112,7 +112,7 @@ const Card = styled.article`
   width: 100%;
   background-color: var(--color-gray-10);
   border-radius: 0.75rem;
-  padding: 1.5rem;
+  padding: var(--space-3);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
   border: 1px solid var(--color-gray-20);
   transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
@@ -157,12 +157,12 @@ const Card = styled.article`
 const CardsInner = styled.div`
   display: flex;
   flex-direction: column-reverse;
-  gap: 1.5rem;
+  gap: var(--space-3);
 
   @media (min-width: 768px) {
     flex-direction: row;
     align-items: stretch;
-    gap: 2rem;
+    gap: var(--space-4);
   }
 `
 
@@ -170,7 +170,7 @@ const CardsColumn = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: var(--space-4);
 `
 
 const AsideImageContainer = styled.div`
@@ -193,7 +193,7 @@ const CardTitle = styled.h3`
   font-size: var(--text-headline-sm);
   font-weight: 700;
   color: var(--color-emerald-70);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-1);
 `
 
 const CardText = styled.p`
@@ -203,18 +203,18 @@ const CardText = styled.p`
 `
 
 const BottomSpacer = styled.div`
-  height: 3rem;
+  height: var(--space-6);
 
   @media (min-width: 768px) {
-    height: 8rem;
+    height: calc(16 * var(--space-unit));
   }
 `
 
 const MidSpacer = styled.div`
-  height: 2rem;
+  height: var(--space-4);
 
   @media (min-width: 768px) {
-    height: 4rem;
+    height: var(--space-8);
   }
 `
 

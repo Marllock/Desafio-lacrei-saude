@@ -51,6 +51,28 @@ const GlobalStyles = createGlobalStyle`
     --lh-headline: 1.2;
     --lh-text: 1.5;
 
+    /* Spacing unit (8px) and typography spacing tokens */
+    --space-unit: 8px;
+    /* Numeric spacing tokens (multiples of 8px) */
+    --space-1: calc(1 * var(--space-unit)); /* 8px */
+    --space-2: calc(2 * var(--space-unit)); /* 16px */
+    --space-3: calc(3 * var(--space-unit)); /* 24px */
+    --space-4: calc(4 * var(--space-unit)); /* 32px */
+    --space-5: calc(5 * var(--space-unit)); /* 40px */
+    --space-6: calc(6 * var(--space-unit)); /* 48px */
+    --space-7: calc(7 * var(--space-unit)); /* 56px */
+    --space-8: calc(8 * var(--space-unit)); /* 64px */
+
+    /* Semantic heading spacing tokens (kept for compatibility) */
+    --space-heading-underline: var(--space-1);
+    --space-heading-subtitle: var(--space-2);
+    --space-heading-other: var(--space-4); /* desktop default */
+    --space-heading-other-mobile: var(--space-3);
+
+    --space-text-paragraph: calc(2 * var(--space-unit));
+    --space-text-control: calc(4 * var(--space-unit)); /* desktop default */
+    --space-text-control-mobile: calc(3 * var(--space-unit));
+
     /* Gradients Light Mode */
     --header-gradient-start: var(--color-green-10);
     --header-gradient-end: var(--color-gray-10);
@@ -79,6 +101,33 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Typography spacing rules using tokens above */
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 var(--space-heading-other);
+  }
+
+  /* When a heading is followed by an inline divider/underline (span), keep a small gap */
+  h1 + span, h2 + span, h3 + span, h4 + span, h5 + span, h6 + span {
+    margin-top: var(--space-heading-underline);
+  }
+
+  /* Heading followed by a paragraph (subtitle) */
+  h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
+    margin-top: 0;
+    margin-bottom: var(--space-heading-subtitle);
+  }
+
+  p {
+    margin: 0 0 var(--space-text-paragraph);
+  }
+
+  /* Form controls spacing relative to surrounding text */
+  label + input, label + textarea, label + select,
+  input, textarea, select {
+    margin-top: 0;
+    margin-bottom: var(--space-text-control);
   }
 
   *:focus { outline: none; }
@@ -110,6 +159,18 @@ const GlobalStyles = createGlobalStyle`
     border-radius: 0.25rem;
   }
 
+  /* Header & Footer spacing
+     - Entre header e qualquer elemento: 48px (var(--space-6))
+     - Entre footer e qualquer elemento anterior: 64px (var(--space-8))
+     A regra do header deve prevalecer sobre outras regras de espaçamento. */
+  header + * {
+    margin-top: var(--space-6) !important;
+  }
+
+  * + footer {
+    margin-top: var(--space-8);
+  }
+
   /* Dark Mode */
   html[data-theme="dark"] {
     --color-gray-10: #0d0d0d;
@@ -126,6 +187,14 @@ const GlobalStyles = createGlobalStyle`
     --header-gradient-end: var(--color-gray-10);
     --footer-gradient-start: var(--color-gray-10);
     --footer-gradient-end: var(--color-emerald-70);
+  }
+
+  /* Mobile overrides (use 3*8px where spec requires 24px) */
+  @media (max-width: 767px) {
+    :root {
+      --space-heading-other: var(--space-heading-other-mobile);
+      --space-text-control: var(--space-text-control-mobile);
+    }
   }
 
   h1, h2, h3, h4, h5, h6 {

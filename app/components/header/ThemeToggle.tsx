@@ -7,7 +7,7 @@ const ThemeButton = styled.button`
   background: none;
   border: none;
   border-radius: 0.375rem;
-  padding: 0.5rem;
+  padding: var(--space-1);
   cursor: pointer;
   display: flex;
   align-items: center;

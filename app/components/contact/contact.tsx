@@ -10,8 +10,8 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
-  padding: 4rem 2rem;
+  gap: var(--space-6);
+  padding: var(--space-8) var(--space-4);
 `
 
 const InfoColumn = styled.div`
@@ -19,7 +19,7 @@ const InfoColumn = styled.div`
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-3);
   align-items: center;
   text-align: center;
 
@@ -49,19 +49,19 @@ const Description = styled.p`
 `
 
 const SocialsContainer = styled.div`
-  margin-top: 1rem;
+  margin-top: var(--space-1);
 `
 
 const SocialsTitle = styled.h2`
   font-size: var(--text-headline-base);
   font-weight: 700;
   color: var(--color-emerald-70);
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-1);
 `
 
 const SocialsList = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: var(--space-2);
 `
 
 const SocialLink = styled(Link)`
@@ -76,7 +76,7 @@ const FormColumn = styled.div`
   width: 100%;
   max-width: 40rem;
   background-color: var(--color-gray-10);
-  padding: 1.5rem;
+  padding: var(--space-3);
   border-radius: 0.5rem;
   box-shadow: 0 6px 18px rgba(0,0,0,0.08);
   border: 1px solid var(--color-gray-20);
@@ -86,14 +86,14 @@ const FormColumn = styled.div`
   justify-content: center;
 
   @media (min-width: 768px) {
-    padding: 2rem;
+    padding: var(--space-4);
   }
 `
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--space-2);
   width: 100%;
 `
 
@@ -107,12 +107,12 @@ const Label = styled.label`
   font-size: var(--text-text-sm);
   font-weight: 700;
   color: var(--color-gray-70);
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--space-1);
 `
 
 const Input = styled.input`
   width: 100%;
-  padding: 0.75rem;
+  padding: calc(1.5 * var(--space-unit));
   border-radius: 0.375rem;
   border: 1px solid var(--color-gray-30);
   color: var(--color-gray-70);
@@ -130,7 +130,7 @@ const Input = styled.input`
 
 const TextArea = styled.textarea`
   width: 100%;
-  padding: 0.75rem;
+  padding: calc(1.5 * var(--space-unit));
   border-radius: 0.375rem;
   border: 1px solid var(--color-gray-30);
   color: var(--color-gray-70);
@@ -148,11 +148,11 @@ const TextArea = styled.textarea`
 `
 
 const SubmitButton = styled.button`
-  margin-top: 0.5rem;
+  margin-top: var(--space-1);
   background-color: var(--color-emerald-60);
   color: white;
   font-weight: 700;
-  padding: 0.75rem 1.5rem;
+  padding: calc(1.5 * var(--space-unit)) calc(3 * var(--space-unit));
   border-radius: 0.375rem;
   border: none;
   cursor: pointer;
@@ -170,7 +170,7 @@ const SubmitButton = styled.button`
 export default function ContactSection() {
   return (
     <Section aria-label="Entre em contato" style={{ flexDirection: 'column', alignItems: 'center' }}>
-      <Title style={{ textAlign: 'center', marginBottom: '2rem' }}>
+      <Title style={{ textAlign: 'center', marginBottom: 'var(--space-4)' }}>
         Entre em contato
       </Title>
       <FormColumn>

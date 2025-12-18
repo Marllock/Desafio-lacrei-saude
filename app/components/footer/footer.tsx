@@ -6,18 +6,18 @@ import styled from "styled-components"
 
 const FooterContainer = styled.footer`
   background: linear-gradient(to bottom, var(--footer-gradient-start), var(--footer-gradient-end));
-  padding: 1rem 1.5rem;
+  padding: var(--space-2) var(--space-3);
   border-top: 1px solid var(--color-gray-20);
   margin-top: auto;
   width: 100%;
   transition: background 0.3s ease;
 
   @media (min-width: 768px) {
-    padding: 1rem 1.5rem;
+    padding: var(--space-2) var(--space-3);
   }
 
   @media (min-width: 1024px) {
-    padding: 0rem 5rem;
+    padding: 0 calc(10 * var(--space-unit));
   }
 `
 
@@ -26,25 +26,25 @@ const ContentWrapper = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1rem 0;
+  gap: var(--space-2);
+  padding: var(--space-2) 0;
 
   @media (min-width: 768px) {
-    gap: 1.5rem;
+    gap: var(--space-3);
   }
 `
 
 const TopSection = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-3);
   align-items: center;
 
   @media (min-width: 768px) {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: var(--space-3);
   }
 `
 
@@ -56,7 +56,7 @@ const LogoWithSocials = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row;
-    gap: 0.5rem;
+    gap: var(--space-1);
     align-items: center;
   }
 `
@@ -74,13 +74,13 @@ const Logo = styled(Link)`
 const SocialLinks = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-left: 0.5rem;
+  gap: var(--space-2);
+  margin-left: var(--space-1);
 `
 
 const SocialLink = styled(Link)`
   display: inline-flex;
-  padding: 0.5rem;
+  padding: var(--space-1);
   border-radius: 0.375rem;
   color: var(--color-gray-80);
   transition: background-color 100ms;
@@ -105,10 +105,10 @@ const FooterNav = styled.nav`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: var(--space-3);
 
   @media (min-width: 768px) {
-    gap: 2rem;
+    gap: var(--space-4);
     justify-content: flex-end;
   }
 `
@@ -118,10 +118,10 @@ const FooterNav = styled.nav`
 const BottomSection = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-3);
   align-items: center;
   border-top: 1px solid var(--color-gray-20);
-  padding-top: 2rem;
+  padding-top: var(--space-4);
 
   @media (min-width: 768px) {
     flex-direction: row;

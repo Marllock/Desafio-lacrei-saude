@@ -12,11 +12,11 @@ const HeroSection = styled.section`
   align-items: center;
   justify-content: center;
   gap: 3rem;
-  padding: 4rem 2rem;
+  padding: var(--space-8) var(--space-4);
 
   @media (min-width: 1024px) {
     flex-direction: row-reverse;
-    padding: 4rem 5rem;
+    padding: var(--space-8) calc(10 * var(--space-unit));
   }
 `
 
@@ -70,11 +70,11 @@ const Description = styled.p`
 `
 
 const ConhecaButton = styled(Link)`
-  margin-top: 1rem;
+  margin-top: var(--space-2);
   display: inline-block;
   border-radius: 0.375rem;
   background-color: var(--color-emerald-60);
-  padding: 0.75rem 1.5rem;
+  padding: calc(1.5 * var(--space-unit)) calc(3 * var(--space-unit));
   color: white;
   font-size: var(--text-text-xl);
   font-weight: 500;
@@ -132,7 +132,7 @@ const NavButton = styled.button`
   background: rgba(0,0,0,0.45);
   color: #fff;
   border: none;
-  padding: 0.6rem 0.8rem;
+  padding: calc(1.2 * var(--space-unit)) calc(1.6 * var(--space-unit));
   min-width: 40px;
   min-height: 40px;
   border-radius: 999px;
@@ -145,22 +145,22 @@ const NavButton = styled.button`
 
   &:hover { background: rgba(0,0,0,0.55); }
 
-  &[data-side="left"] { left: 0.5rem; }
-  &[data-side="right"] { right: 0.5rem; }
+  &[data-side="left"] { left: var(--space-1); }
+  &[data-side="right"] { right: var(--space-1); }
 `
 
 const Dots = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 0.5rem;
+  bottom: var(--space-1);
   display: flex;
-  gap: 0.5rem;
+  gap: var(--space-1);
 `
 
 const Dot = styled.button<{ $active?: boolean }>`
-  width: 8px;
-  height: 8px;
+  width: var(--space-1);
+  height: var(--space-1);
   border-radius: 50%;
   background: ${props => (props.$active ? 'var(--color-emerald-60)' : 'rgba(255,255,255,0.6)')};
   border: none;
