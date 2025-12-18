@@ -12,7 +12,6 @@ const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 1.5rem;
   transition: background 0.3s ease;
 
   padding: var(--space-4) var(--space-3);

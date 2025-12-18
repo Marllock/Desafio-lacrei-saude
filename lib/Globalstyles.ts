@@ -194,6 +194,61 @@ const GlobalStyles = createGlobalStyle`
     :root {
       --space-heading-other: var(--space-heading-other-mobile);
       --space-text-control: var(--space-text-control-mobile);
+
+      /* Mobile semantic spacing tokens (based on mobile spec) */
+      --space-header-gap: var(--space-3); /* 24px */
+      --space-footer-gap: var(--space-8); /* 64px */
+
+      --space-heading-underline: var(--space-1); /* 8px */
+      --space-heading-subtitle: var(--space-2); /* 16px */
+      --space-heading-other: var(--space-3); /* 24px */
+
+      --space-text-paragraph: var(--space-2); /* 16px */
+      --space-text-control: var(--space-3); /* 24px */
+
+      --space-input-bullet: var(--space-2); /* 16px */
+      --space-input-checkbox: var(--space-2); /* 16px */
+      --space-input-input: var(--space-2); /* 16px */
+      --space-input-radio: var(--space-3); /* 24px */
+
+      --space-helper-helper: var(--space-1); /* 8px */
+      --space-helper-input: var(--space-1); /* 8px */
+
+      --space-image-vertical: var(--space-4); /* 32px */
+
+      /* Outros */
+      --space-accordion: var(--space-2); /* 16px */
+      --space-breadcrumb: var(--space-3); /* 24px */
+      --space-bullet: var(--space-1); /* 8px */
+      --space-card: var(--space-2); /* 16px */
+      --space-checkbox: var(--space-1); /* 8px */
+      --space-divider: var(--space-3); /* 24px */
+      --space-dropdown: var(--space-2); /* 16px */
+      --space-progress-check: var(--space-3); /* 24px */
+      --space-radio: var(--space-1); /* 8px */
+      --space-sections-diff: var(--space-5); /* 40px */
+      --space-tabbar-banner: var(--space-3); /* 24px */
+      --space-form-margin: var(--space-5); /* 40px */
+    }
+
+    /* Mobile-specific spacing rules that follow the spec */
+    header + * {
+      margin-top: var(--space-header-gap) !important; /* 24px on mobile */
+    }
+
+    /* Ensure footer spacing remains as specified (64px) */
+    * + footer {
+      margin-top: var(--space-footer-gap);
+    }
+
+    /* Images: vertical spacing between an image and another element */
+    img, picture, figure {
+      display: block;
+      max-width: 100%;
+    }
+
+    img + *, * + img, picture + *, * + picture, figure + *, * + figure {
+      margin-top: var(--space-image-vertical);
     }
   }
 

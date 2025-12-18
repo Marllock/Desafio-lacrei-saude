@@ -105,7 +105,7 @@ const CardsSectionTitle = styled.h2`
   font-weight: 700;
   color: var(--color-emerald-70);
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-3);
 `
 
 const Card = styled.article`

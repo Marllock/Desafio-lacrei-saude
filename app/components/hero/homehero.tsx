@@ -133,8 +133,8 @@ const NavButton = styled.button`
   color: #fff;
   border: none;
   padding: calc(1.2 * var(--space-unit)) calc(1.6 * var(--space-unit));
-  min-width: 40px;
-  min-height: 40px;
+  min-width: var(--space-5);
+  min-height: var(--space-5);
   border-radius: 999px;
   cursor: pointer;
   display: flex;

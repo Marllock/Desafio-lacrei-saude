@@ -41,8 +41,8 @@ const ThemeButton = styled.button`
   }
 
   svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: var(--space-3);
+    height: var(--space-3);
   }
 `;
 
