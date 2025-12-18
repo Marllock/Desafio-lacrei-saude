@@ -90,18 +90,6 @@ document.documentElement.removeAttribute('data-theme')
 - Foco visível e controles navegáveis por teclado.
 - Imagens tratadas com `next/image` para lazy-loading/otimização (quando aplicável).
 
-## Performance e Lighthouse
-
-- Recomenda-se rodar o build de produção antes de executar auditorias (Lighthouse) para resultados reais:
-
-```bash
-npm run build && npm start
-```
-
-- Algumas dicas rápidas para melhorar o resultado do Lighthouse:
-  - Servir o site via HTTPS (Vercel fornece HTTPS automático em deploys).
-  - Usar `next/image` e formatos modernos (AVIF/WebP).
-  - Reduzir requisições de terceiros (fonts, analytics) ou usar `next/font` para otimização de fontes.
 
 ## Deploy
 
@@ -111,3 +99,26 @@ https://desafio-lacrei-saude-uwsd.vercel.app/
 ## Resultado Lighthouse
 
 ![resultado lighthouse](lighthouse.png)
+
+https://pagespeed.web.dev/analysis/https-desafio-lacrei-saude-uwsd-vercel-app/hmcyr3dydw?hl=pt&form_factor=mobile
+
+## Registros de Testes
+
+- Unitários (Jest): testes dos componentes e hooks principais. Como rodar: `npm test`. Todos os testes do repositório passam — veja a pasta `coverage/` para detalhes.
+- Comportamento (React Testing Library): casos para `Header`, `Footer`, `Contact` e `Hero` (`app/components/**/*.test.tsx`), cobrindo renderização, acessibilidade básica e o toggle de tema.
+- Acessibilidade: verificação manual de navegação por teclado e leitores de tela (NVDA/VoiceOver), além de checagem de contraste com Axe/Lighthouse. Ajustes aplicados onde faltava semântica ou labels.
+- Responsividade: testes no DevTools para mobile/tablet/desktop; o layout se mantém legível nos pontos de quebra adotados.
+- Performance: auditoria em build de produção (`npm run build && npm start`) com foco em otimização de imagens 
+- Cross-browser: verificado em Chrome, Firefox e Edge — comportamentos principais alinhados.
+
+
+## Justificativas Visuais
+
+- Contraste e legibilidade: paleta e tipografia pensadas para leitura confortável em ambos os temas.
+- Dark Mode: implementado via `data-theme` e variáveis CSS para manter consistência entre temas.
+- Estados de foco: visualização clara do foco para usuários de teclado.
+- Responsividade: prioridades visuais mantidas em telas menores.
+
+## Resultados dos Testes
+
+![alt text](image-1.png)

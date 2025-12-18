@@ -108,7 +108,7 @@ const CardsSectionTitle = styled.h2`
   margin-bottom: 1.5rem;
 `
 
-const Card = styled.div`
+const Card = styled.article`
   width: 100%;
   background-color: var(--color-gray-10);
   border-radius: 0.75rem;
@@ -189,7 +189,7 @@ const AsideImageContainer = styled.div`
   }
 `
 
-const CardTitle = styled.h2`
+const CardTitle = styled.h3`
   font-size: var(--text-headline-sm);
   font-weight: 700;
   color: var(--color-emerald-70);
@@ -254,19 +254,19 @@ export default function SobreHero() {
         <CardsSectionTitle>Nosso Compromisso</CardsSectionTitle>
         <CardsInner>
           <CardsColumn>
-            <Card role="article" aria-label="Card Inclusão">
+            <Card aria-label="Card Inclusão">
               <CardTitle>Inclusão</CardTitle>
               <CardText>
                 Nossa plataforma digital é acessível e atendemos toda comunidade LGBTQIAPN+.
               </CardText>
             </Card>
-            <Card role="article" aria-label="Card Acolhimento">
+            <Card aria-label="Card Acolhimento">
               <CardTitle>Acolhimento</CardTitle>
               <CardText>
                 As pessoas profissionais da saúde entendem as necessidades da comunidade LGBTQIAPN+.
               </CardText>
             </Card>
-            <Card role="article" aria-label="Card Segurança">
+            <Card aria-label="Card Segurança">
               <CardTitle>Segurança</CardTitle>
               <CardText>
                 Protegemos seus dados e validamos pacientes e profissionais da saúde.
