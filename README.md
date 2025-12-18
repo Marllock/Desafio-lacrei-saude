@@ -122,3 +122,28 @@ https://pagespeed.web.dev/analysis/https-desafio-lacrei-saude-uwsd-vercel-app/hm
 ## Resultados dos Testes
 
 ![alt text](image-1.png)
+
+## Estratégia de Rollback
+
+Caso uma nova versão apresente problemas em produção, existem duas estratégias principais para reverter as alterações.
+
+1. Rollback Instantâneo (Recomendado - Via Vercel)
+Esta é a forma mais rápida de restaurar o serviço, pois não requer novo build.
+
+Acesse o dashboard do projeto na Vercel.
+Vá até a aba "Deployments".
+Localize o deploy anterior que estava estável (marcado como "Ready").
+Clique no menu de opções (três pontos) e selecione "Instant Rollback".
+A versão anterior será promovida a produção imediatamente.
+
+
+2. Rollback via Código (Via Git)
+Utilize este método se precisar corrigir o histórico do repositório.
+
+Identifique o hash do commit estável anterior:
+git log --oneline
+Crie um novo commit que reverte as alterações problemáticas:
+git revert <hash-do-commit-problematico>
+Envie a alteração para a branch main:
+git push origin main
+O pipeline da Vercel detectará o novo commit e fará o deploy da versão corrigida.
