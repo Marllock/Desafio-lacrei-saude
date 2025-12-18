@@ -23,6 +23,11 @@ const HeaderContainer = styled.header`
   @media (min-width: 1024px) {
     padding: var(--space-4) calc(15 * var(--space-unit));
   }
+
+  /* Mobile: follow spacing tokens from GlobalStyles (24px) */
+  @media (max-width: 767px) {
+    padding: var(--space-3) var(--space-3);
+  }
 `
 
 const MobileActions = styled.div`
@@ -147,15 +152,15 @@ export default function Header() {
   return (
     <HeaderContainer aria-label="Cabeçalho principal" role="banner">
       {/* Logo */}
-      <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: 'calc(1.5 * var(--space-unit))' }}>
-        <Image
+      <LogoLink href="/">
+        <LogoImage
           src="/logo-header.svg"
           alt="Logo da Lacrei Saúde"
           width={250}
           height={52}
           priority
         />
-      </Link>
+      </LogoLink>
 
       {/* Ações Mobile: tema sempre visível + menu */}
       <MobileActions>
@@ -203,3 +208,26 @@ export default function Header() {
     </HeaderContainer>
   )
 }
+
+const LogoLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: calc(1.5 * var(--space-unit));
+
+  img {
+    display: block;
+    height: auto;
+    max-width: 180px;
+    width: auto;
+  }
+
+  @media (max-width: 767px) {
+    img {
+      max-width: 140px;
+    }
+  }
+`
+
+// Next/Image returns an element that should accept styled-components,
+// but to be safe we wrap it in a styled component with the same props.
+const LogoImage = (props: any) => <Image {...props} />
